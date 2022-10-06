@@ -29,7 +29,7 @@ class LoginRequest extends FormRequest
             'phone' => ['required',
                         function ($attribute, $value, $fail) {
                             if (!User::where('phone', $value)->exists()) {
-                                abort(403, __('Пользователь с таким телефоном не найден'));
+                                abort(403,'Пользователь с таким телефоном не найден');
                             }
                         }
                        ],
@@ -42,7 +42,7 @@ class LoginRequest extends FormRequest
                                     !$user
                                     || !Hash::check($value, $user->password)
                                 ) {
-                                    abort(403, __('Неверный пароль'));
+                                    abort(403,'Неверный пароль');
                                 }
                             }
                           ]
