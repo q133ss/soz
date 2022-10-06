@@ -22,6 +22,10 @@ return new class extends Migration
             $table->string('phone');
             $table->boolean('is_executor')->default(false);
             $table->foreignId('part_id')->nullable();
+            $table->integer('experience')->nullable(); //стаж
+            $table->text('work_experience')->nullable(); //опыт работы
+            $table->text('education')->nullable(); //образование
+            $table->text('training')->nullable(); //повышение квалификации
             $table->double('money')->default(0.0);
             $table->rememberToken();
             $table->timestamps();
